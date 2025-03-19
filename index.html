@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>the lost transmissions</h1>
+        <div id="countdown">
+            <span id="days"></span> giorni
+            <span id="hours"></span> ore
+            <span id="minutes"></span> minuti
+            <span id="seconds"></span> secondi
+        </div>
+        <div class="divider">✧༺ ♡ ༻✧</div>
+        <audio id="bg-music" autoplay loop muted>
+            <source src="audio/voicemail.mp3" type="audio/mpeg">
+        </audio>
+        <button id="mute-unmute">mute</button>
+        <div class="divider">✧༺ ♡ ༻✧</div>
+        <div class="stream-links">
+            <p>stream voicemail</p>
+            <div class="icons-container">
+                <a href="https://soundcloud.com/rinfiggi" target="_blank">
+                    <img src="icons/soundcloud.svg" alt="soundcloud" class="icon">
+                </a>
+                <a href="https://rinfiggi.bandcamp.com" target="_blank">
+                    <img src="icons/bandcamp.svg" alt="bandcamp" class="icon">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">© 2025 rinfiggi. tutti i diritti riservati.</div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("May 2, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const audio = document.getElementById("bg-music");
+        const muteButton = document.getElementById("mute-unmute");
+
+        muteButton.addEventListener("click", () => {
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.innerText = "mute";
+            } else {
+                audio.muted = true;
+                muteButton.innerText = "unmute";
+            }
+        });
+    </script>
+</body>
+</html>

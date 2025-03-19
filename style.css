@@ -1,0 +1,100 @@
+/* Importa il font Jacquard 12 dalla cartella fonts */
+@font-face {
+    font-family: 'Jacquard 12';
+    src: url('fonts/jacquardfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Stili generali */
+body {
+    font-family: 'Jacquard 12', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.gifer.com/QtPg.gif');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#countdown {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.divider {
+    margin: 15px 0; /* Aggiunto margine per distanziare i divisori dal tasto mute */
+}
+
+button {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Jacquard 12', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.copyright {
+    margin-top: auto;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Margine extra per il copyright solo su desktop */
+@media (min-width: 768px) {
+    .copyright {
+        margin-bottom: 10px;
+    }
+}
+
+/* Stili per "stream voicemail" e le icone */
+.stream-links {
+    display: flex;
+    flex-direction: column;  /* Cambia l'orientamento per mettere il testo sopra le icone */
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;  /* Aggiungi un margine extra per spostare il box più in basso */
+    font-size: 14px;
+}
+
+.stream-links p {
+    margin-bottom: 10px; /* Aggiungi un po' di spazio tra il testo e le icone */
+}
+
+.icons-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Permette alle icone di andare a capo se necessario */
+    justify-content: center;
+}
+
+.icon {
+    width: 25px;  /* Riduci la dimensione delle icone */
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.icon:hover {
+    opacity: 0.7;
+}
