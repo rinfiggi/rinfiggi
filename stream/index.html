@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stream / buy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+      font-family: 'jacquard 12';
+      src: url('fonts/jacquardfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-family: 'jacquard 12', sans-serif;
+      font-size: 14px;
+      z-index: 1000;
+      display: none;
+    }
+
+    #cookie-banner a {
+      color: #f2f2f2;
+      text-decoration: underline;
+    }
+
+    #cookie-banner .cookie-buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #cookie-banner button {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-family: 'jacquard 12', sans-serif;
+      font-size: 14px;
+    }
+
+    #cookie-banner button:hover {
+      background-color: #444;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="https://rinfiggi.online" target="_blank" rel="noopener noreferrer">rinfiggi</a></h1>
+    <h2 class="subtitle">stream / buy "voicemail"</h2>
+  </header>
+
+  <section class="links">
+    <div>
+      <a href="https://open.spotify.com/intl-it/artist/3ThlC6a5sA5glahFMvExpk" class="jacquard-button">spotify</a>
+      <a href="https://music.apple.com/it/artist/rinfiggi/1497491358" class="jacquard-button">apple music</a>
+      <a href="https://www.soundcloud.com/rinfiggi" class="jacquard-button">soundcloud</a>
+      <a href="https://rinfiggi.bandcamp.com/" class="jacquard-button">buy</a>
+      <a href="https://listen.tidal.com/album/428375050" class="jacquard-button">tidal</a>
+      <a href="https://music.youtube.com/playlist?list=OLAK5uy_n7oioajGZx4pPX84cfPaMktqi6Bbt-_7Q" class="jacquard-button">youtube</a>
+      <a href="https://music.amazon.it/albums/B0F3V1ZQLB" class="jacquard-button">amazon</a>
+      <a href="https://www.deezer.com/it/album/738303831" class="jacquard-button">deezer</a>
+    </div>
+  </section>
+
+  <div class="divider">✧༺ ♡ ༻✧</div>
+
+  <section class="bandsintown">
+    <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
+    <a class="bit-widget-initializer" 
+       data-artist-name="rinfiggi" 
+       data-display-local-dates="true" 
+       data-display-past-dates="true" 
+       data-auto-style="false" 
+       data-text-color="#ffffff" 
+       data-link-color="#404040" 
+       data-background-color="rgba(0,0,0,0)" 
+       data-display-limit="15" 
+       data-display-start-time="true" 
+       data-link-text-color="#ffffff" 
+       data-display-lineup="true" 
+       data-display-play-my-city="true" 
+       data-separator-color="rgba(124,124,124,0.25)" 
+       data-font="jacquard 12, vt323, sans-serif"></a>
+  </section>
+
+  <div class="divider">✧༺ ♡ ༻✧</div>
+
+  <div class="copyright">
+    © 2025 rinfiggi. all rights reserved.
+  </div>
+
+  <!-- cookie banner -->
+  <div id="cookie-banner">
+    this website uses <strong>third-party cookies</strong> to show concert dates (bandsintown).
+    <a href="https://corp.bandsintown.com/privacy" target="_blank">learn how bandsintown handles your data</a>
+    <div class="cookie-buttons">
+      <button id="accept-cookies">accept</button>
+      <button id="reject-cookies">reject</button>
+    </div>
+  </div>
+
+  <script>
+    if (!localStorage.getItem("cookiesAccepted")) {
+      document.getElementById("cookie-banner").style.display = "block";
+    }
+
+    document.getElementById("accept-cookies").onclick = function() {
+      localStorage.setItem("cookiesAccepted", "true");
+      document.getElementById("cookie-banner").style.display = "none";
+    };
+
+    document.getElementById("reject-cookies").onclick = function() {
+      localStorage.setItem("cookiesAccepted", "false");
+      document.getElementById("cookie-banner").style.display = "none";
+    };
+  </script>
+</body>
+</html>
