@@ -1,7 +1,7 @@
 /* Importa il font Jacquard 12 dalla cartella fonts */
 @font-face {
     font-family: 'Jacquard 12';
-    src: url('jacquardfont.ttf') format('truetype');
+    src: url('./jacquardfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
